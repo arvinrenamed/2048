@@ -1,3 +1,4 @@
+//bind兼容性修复
 Function.prototype.bind = Function.prototype.bind || function (target) {
   var self = this;
   return function (args) {

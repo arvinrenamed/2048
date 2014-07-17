@@ -1,3 +1,4 @@
+// 动画函数兼容修复
 (function () {
   var lastTime = 0;
   var vendors = ['webkit', 'moz'];
