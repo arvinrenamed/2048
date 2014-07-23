@@ -1,3 +1,4 @@
+//修复Html5 api classlist 兼容
 (function () {
   if (typeof window.Element === "undefined" ||
       "classList" in document.documentElement) {

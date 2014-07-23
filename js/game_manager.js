@@ -13,14 +13,14 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.setup();
 }
 
-// Restart the game
+// 重启游戏
 GameManager.prototype.restart = function () {
   this.storageManager.clearGameState();
   this.actuator.continueGame(); // Clear the game won/lost message
   this.setup();
 };
 
-// Keep playing after winning (allows going over 2048)
+// 继续游戏 (允许超过2048)
 GameManager.prototype.keepPlaying = function () {
   this.keepPlaying = true;
   this.actuator.continueGame(); // Clear the game won/lost message
@@ -43,7 +43,7 @@ GameManager.prototype.setup = function () {
     this.over        = previousState.over;
     this.won         = previousState.won;
     this.keepPlaying = previousState.keepPlaying;
-  } else {
+  } else {  // 初始化 gameState
     this.grid        = new Grid(this.size);
     this.score       = 0;
     this.over        = false;
@@ -70,7 +70,6 @@ GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
     var value = Math.random() < 0.9 ? 2 : 4;
     var tile = new Tile(this.grid.randomAvailableCell(), value);
-
     this.grid.insertTile(tile);
   }
 };

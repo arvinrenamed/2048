@@ -39,6 +39,8 @@ LocalStorageManager.prototype.localStorageSupported = function () {
   }
 };
 
+
+
 // Best score getters/setters
 LocalStorageManager.prototype.getBestScore = function () {
   return this.storage.getItem(this.bestScoreKey) || 0;
@@ -57,6 +59,14 @@ LocalStorageManager.prototype.getGameState = function () {
 LocalStorageManager.prototype.setGameState = function (gameState) {
   this.storage.setItem(this.gameStateKey, JSON.stringify(gameState));
 };
+/*{
+    grid : new Grid(this.size),
+    score : 0,
+    over : false,
+    won : false,
+    keepPlaying : false
+}*/
+
 
 LocalStorageManager.prototype.clearGameState = function () {
   this.storage.removeItem(this.gameStateKey);

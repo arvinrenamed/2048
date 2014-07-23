@@ -14,7 +14,6 @@ Grid.prototype.empty = function () {
       row.push(null);
     }
   }
-
   return cells;
 };
 
@@ -29,14 +28,12 @@ Grid.prototype.fromState = function (state) {
       row.push(tile ? new Tile(tile.position, tile.value) : null);
     }
   }
-
   return cells;
 };
 
 // Find the first available random position
 Grid.prototype.randomAvailableCell = function () {
   var cells = this.availableCells();
-
   if (cells.length) {
     return cells[Math.floor(Math.random() * cells.length)];
   }
